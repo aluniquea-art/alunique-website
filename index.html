@@ -1,107 +1,179 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aluniq Indonesia</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f5f5;
-      color: #222;
-    }
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px 20px;
-      background: #ffffff;
-    }
-    h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
-    }
-    p {
-      max-width: 500px;
-      font-size: 16px;
-      color: #555;
-      margin-bottom: 30px;
-    }
-    .btn-wa {
-      background: #000;
-      color: #fff;
-      padding: 14px 26px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-      transition: 0.3s;
-    }
-    .btn-wa:hover {
-      opacity: 0.8;
-    }
-    .products {
-      margin-top: 50px;
-      max-width: 800px;
-      width: 100%;
-    }
-    .product {
-      background: #fafafa;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
-      border: 1px solid #eee;
-    }
-    .product h3 {
-      margin: 0 0 8px;
-    }
-    footer {
-      margin-top: 60px;
-      font-size: 13px;
-      color: #888;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALUNIQ – Premium Sneakers</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #0b0b0b;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+p {
+  color: #bbbbbb;
+  line-height: 1.6;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px 50px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.badge {
+  display: inline-block;
+  background: #d4af37;
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.slider {
+  background: #111;
+  border-radius: 20px;
+  padding: 60px;
+  text-align: center;
+  margin: 40px 0;
+  color: #777;
+}
+
+.product {
+  background: #111;
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+.price-list {
+  margin-top: 20px;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #222;
+  padding: 12px 0;
+}
+
+.price {
+  color: #d4af37;
+  font-weight: bold;
+}
+
+.cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cta a {
+  background: #25D366;
+  color: #000;
+  padding: 16px 30px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Floating WA */
+.wa-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: #000;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+</style>
 </head>
+
 <body>
 
-  <div class="hero">
-    <h1>ALUNIQ</h1>
+<!-- HERO -->
+<section class="hero">
+  <h1>ALUNIQ</h1>
+  <p>Premium Imported Sneakers</p>
+</section>
+
+<div class="container">
+
+  <!-- SLIDER PLACEHOLDER -->
+  <div class="slider">
+    Gallery Produk<br>
+    <small>(Slider siap, tinggal isi foto nanti)</small>
+  </div>
+
+  <!-- PRODUCT -->
+  <div class="product">
+    <span class="badge">BEST SELLER</span>
+    <h2>Premium Sneakers Collection</h2>
     <p>
-      Menyediakan produk pilihan dengan kualitas terbaik.
-      Fokus pada keaslian, kenyamanan, dan harga yang masuk akal.
+      Desain timeless, nyaman dipakai harian, dan tampilan clean ala brand internasional.
+      Cocok untuk gaya casual maupun semi-formal.
     </p>
 
-    <a class="btn-wa" href="https://wa.me/6285256179445?text=Halo%20Aluniq,%20saya%20ingin%20order" target="_blank">
-      Pesan via WhatsApp
-    </a>
-
-    <div class="products">
-      <div class="product">
-        <h3>Sepatu Import Original</h3>
-        <p>Produk original, nyaman dipakai, dan siap kirim.</p>
-        <a class="btn-wa" href="https://wa.me/6285256179445?text=Halo%20Aluniq,%20saya%20ingin%20order%20Sepatu%20Import" target="_blank">
-          Order Sekarang
-        </a>
+    <!-- PRICE LIST -->
+    <div class="price-list">
+      <div class="price-item">
+        <span>Classic Series</span>
+        <span class="price">Rp 2.150.000</span>
       </div>
-
-      <div class="product">
-        <h3>Produk Pilihan Lainnya</h3>
-        <p>Stok terbatas, bisa tanya detail via WhatsApp.</p>
-        <a class="btn-wa" href="https://wa.me/6285256179445?text=Halo%20Aluniq,%20saya%20ingin%20tanya%20produk" target="_blank">
-          Tanya via WhatsApp
-        </a>
+      <div class="price-item">
+        <span>Premium Series</span>
+        <span class="price">Rp 2.350.000</span>
+      </div>
+      <div class="price-item">
+        <span>Limited Edition</span>
+        <span class="price">Rp 2.650.000</span>
       </div>
     </div>
 
-    <footer>
-      © 2026 Aluniq Indonesia
-    </footer>
+    <div class="cta">
+      <a href="https://wa.me/6285256179445?text=Halo%20Aluniq,%20saya%20ingin%20order">
+        Order via WhatsApp
+      </a>
+    </div>
   </div>
+
+</div>
+
+<!-- FLOATING WHATSAPP -->
+<a class="wa-float" href="https://wa.me/6285256179445">💬</a>
 
 </body>
 </html>
