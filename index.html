@@ -10,76 +10,90 @@ body {
   margin: 0;
   font-family: 'Arial', sans-serif;
   background: #0b0b0b;
-  color: #ffffff;
+  color: #fff;
 }
 
 .container {
   max-width: 1100px;
   margin: auto;
-  padding: 30px 20px;
+  padding: 40px 20px;
 }
 
-h1, h2, h3 {
-  margin: 0;
-  font-weight: 600;
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease;
 }
 
-p {
-  color: #bbbbbb;
-  line-height: 1.6;
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero {
   text-align: center;
-  padding: 80px 20px 50px;
+  padding: 90px 20px 60px;
 }
 
 .hero h1 {
-  font-size: 42px;
-  letter-spacing: 2px;
+  font-size: 44px;
+  letter-spacing: 3px;
 }
 
 .hero p {
   margin-top: 10px;
-  font-size: 16px;
+  color: #aaa;
 }
 
 .badge {
   display: inline-block;
   background: #d4af37;
   color: #000;
-  padding: 6px 14px;
-  border-radius: 20px;
+  padding: 6px 16px;
+  border-radius: 30px;
   font-size: 12px;
   font-weight: bold;
   margin-bottom: 15px;
 }
 
+/* SLIDER */
 .slider {
-  background: #111;
+  overflow: hidden;
   border-radius: 20px;
-  padding: 60px;
-  text-align: center;
   margin: 40px 0;
+}
+
+.slides {
+  display: flex;
+  animation: slide 12s infinite;
+}
+
+.slide {
+  min-width: 100%;
+  background: #111;
+  padding: 80px;
+  text-align: center;
   color: #777;
+}
+
+@keyframes slide {
+  0% {transform: translateX(0);}
+  33% {transform: translateX(-100%);}
+  66% {transform: translateX(-200%);}
+  100% {transform: translateX(0);}
 }
 
 .product {
   background: #111;
-  border-radius: 20px;
-  padding: 30px;
-  margin-top: 30px;
-}
-
-.price-list {
-  margin-top: 20px;
+  border-radius: 24px;
+  padding: 40px;
 }
 
 .price-item {
   display: flex;
   justify-content: space-between;
+  padding: 14px 0;
   border-bottom: 1px solid #222;
-  padding: 12px 0;
 }
 
 .price {
@@ -95,72 +109,69 @@ p {
 .cta a {
   background: #25D366;
   color: #000;
-  padding: 16px 30px;
+  padding: 16px 36px;
   border-radius: 40px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 16px;
 }
 
-/* Floating WA */
+/* FLOATING WA */
 .wa-float {
   position: fixed;
   bottom: 20px;
   right: 20px;
   background: #25D366;
   color: #000;
-  width: 58px;
-  height: 58px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
   text-decoration: none;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<section class="hero">
+<section class="hero fade">
   <h1>ALUNIQ</h1>
   <p>Premium Imported Sneakers</p>
 </section>
 
 <div class="container">
 
-  <!-- SLIDER PLACEHOLDER -->
-  <div class="slider">
-    Gallery Produk<br>
-    <small>(Slider siap, tinggal isi foto nanti)</small>
+  <!-- SLIDER -->
+  <div class="slider fade">
+    <div class="slides">
+      <div class="slide">Premium Design</div>
+      <div class="slide">Comfort & Quality</div>
+      <div class="slide">International Look</div>
+    </div>
   </div>
 
   <!-- PRODUCT -->
-  <div class="product">
+  <div class="product fade">
     <span class="badge">BEST SELLER</span>
-    <h2>Premium Sneakers Collection</h2>
+    <h2>Signature Collection</h2>
     <p>
-      Desain timeless, nyaman dipakai harian, dan tampilan clean ala brand internasional.
-      Cocok untuk gaya casual maupun semi-formal.
+      Dirancang untuk kamu yang mengutamakan kualitas, kenyamanan, dan tampilan
+      clean ala brand internasional.
     </p>
 
-    <!-- PRICE LIST -->
-    <div class="price-list">
-      <div class="price-item">
-        <span>Classic Series</span>
-        <span class="price">Rp 2.150.000</span>
-      </div>
-      <div class="price-item">
-        <span>Premium Series</span>
-        <span class="price">Rp 2.350.000</span>
-      </div>
-      <div class="price-item">
-        <span>Limited Edition</span>
-        <span class="price">Rp 2.650.000</span>
-      </div>
+    <div class="price-item">
+      <span>Classic Series</span>
+      <span class="price">Rp 2.150.000</span>
+    </div>
+    <div class="price-item">
+      <span>Premium Series</span>
+      <span class="price">Rp 2.350.000</span>
+    </div>
+    <div class="price-item">
+      <span>Limited Edition</span>
+      <span class="price">Rp 2.650.000</span>
     </div>
 
     <div class="cta">
@@ -172,8 +183,18 @@ p {
 
 </div>
 
-<!-- FLOATING WHATSAPP -->
 <a class="wa-float" href="https://wa.me/6285256179445">💬</a>
+
+<script>
+const fades = document.querySelectorAll('.fade');
+window.addEventListener('scroll', () => {
+  fades.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+      el.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
